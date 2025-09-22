@@ -2,19 +2,13 @@ import { useEffect, useRef, useState } from "react";
 
 export default function App() {
   const canvasRef = useRef(null);
-  // Refs to control animation parameters
   const speedRef = useRef(0.15);
   const waveXRef = useRef(0);
   const directionRef = useRef(1);
   const displayHueRef = useRef(180);
   const targetHueRef = useRef(180);
-  
-  // Ref for the animation frame
   const animationFrameIdRef = useRef(null);
-
-  // State to trigger the grid container animation
   const [isInteracting, setIsInteracting] = useState(false);
-  // State to count the number of color changes
   const [bounceCount, setBounceCount] = useState(0);
 
   useEffect(() => {
@@ -77,8 +71,7 @@ export default function App() {
       window.removeEventListener("resize", resizeCanvas);
       cancelAnimationFrame(animationFrameIdRef.current);
     };
-  }, []); // The empty array ensures this effect runs only once
-
+  }, []); 
   // --- Animation Trigger ---
   const triggerInteraction = () => {
     setIsInteracting(true);
