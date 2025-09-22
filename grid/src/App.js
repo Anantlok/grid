@@ -10,6 +10,9 @@ export default function App() {
   const animationFrameIdRef = useRef(null);
   const [isInteracting, setIsInteracting] = useState(false);
   const [bounceCount, setBounceCount] = useState(0);
+  useEffect(() => {
+    document.title = "Grid Animation";
+  }, []);
 
   useEffect(() => {
     const canvas = canvasRef.current;
