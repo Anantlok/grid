@@ -5,7 +5,7 @@ export default function App() {
   const speedRef = useRef(0.15);
   const waveXRef = useRef(0);
   const directionRef = useRef(1);
-  const displayHueRef = useRef(180);
+  const displayHueRef = seRef(180);
   const targetHueRef = useRef(180);
   const animationFrameIdRef = useRef(null);
   const [isInteracting, setIsInteracting] = useState(false);
